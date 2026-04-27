@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --background: #020617; /* Deep Cyber-Dark */
+  --foreground: #f8fafc;
+  --primary: #FF9933; /* Deep Saffron */
+  --secondary: #000080; /* Navy Blue */
+  --accent: #138808; /* India Green */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-inter);
+}
+
+@utility neon-glow {
+  filter: drop-shadow(0 0 10px rgba(75, 0, 130, 0.8)) drop-shadow(0 0 20px rgba(75, 0, 130, 0.6));
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}

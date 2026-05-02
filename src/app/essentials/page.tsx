@@ -4,34 +4,34 @@ import InkScanner from '@/components/InkScanner';
 export default function EssentialsPage() {
   return (
     <div className="max-w-6xl mx-auto space-y-8">
-      <header>
-        <h1 className="text-3xl font-bold text-white mb-2">Election Essentials</h1>
-        <p className="text-slate-400">Everything you need to know before you vote.</p>
+      <header className="mb-10">
+        <h1 className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tighter">Election Essentials</h1>
+        <p className="text-slate-400 text-xl font-medium leading-relaxed">Everything you need to know before you vote.</p>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
             <Shield className="w-8 h-8 text-primary mb-4" />
-            <h3 className="text-lg font-bold text-white mb-2">Eligibility</h3>
-            <p className="text-slate-400 text-sm">
+            <h3 className="text-xl font-black text-white mb-3 tracking-tight">Eligibility</h3>
+            <p className="text-slate-400 text-base leading-relaxed font-medium">
               Must be 18+ years of age, an Indian citizen, and officially registered in the electoral roll of your constituency.
             </p>
           </div>
           
           <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
             <IdCard className="w-8 h-8 text-secondary mb-4" />
-            <h3 className="text-lg font-bold text-white mb-2">Valid IDs</h3>
-            <p className="text-slate-400 text-sm">
+            <h3 className="text-xl font-black text-white mb-3 tracking-tight">Valid IDs</h3>
+            <p className="text-slate-400 text-base leading-relaxed font-medium">
               Voter ID (EPIC), Aadhaar Card, PAN Card, Passport, Driving License, or verified MNREGA job card.
             </p>
           </div>
           
           <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 sm:col-span-2">
             <Box className="w-8 h-8 text-accent mb-4" />
-            <h3 className="text-lg font-bold text-white mb-2">EVM / VVPAT</h3>
-            <p className="text-slate-400 text-sm">
-              Electronic Voting Machines ensure fast, tamper-proof voting. After pressing the button, look at the VVPAT machine next to it. It will display a printed slip with your candidate's serial number, name, and symbol for 7 seconds before securely dropping into a sealed box.
+            <h3 className="text-xl font-black text-white mb-3 tracking-tight">EVM / VVPAT</h3>
+            <p className="text-slate-400 text-base leading-relaxed font-medium">
+              Electronic Voting Machines ensure fast, tamper-proof voting. After pressing the button, look at the VVPAT machine next to it. It will display a printed slip with your candidate&apos;s serial number, name, and symbol for 7 seconds before securely dropping into a sealed box.
             </p>
           </div>
         </div>

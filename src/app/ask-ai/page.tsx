@@ -99,9 +99,9 @@ export default function AskAIPage() {
 
   return (
     <div className="max-w-2xl mx-auto flex flex-col h-[calc(100vh-8rem)]">
-      <header className="mb-6 text-center">
-        <h1 className="text-3xl font-bold text-white">Voice Concierge</h1>
-        <p className="text-slate-400 mt-2 text-sm">Speak naturally. I understand regional dialects.</p>
+      <header className="mb-10 text-center">
+        <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter">Voice Concierge</h1>
+        <p className="text-slate-400 mt-3 text-lg font-medium leading-relaxed">Speak naturally. I understand regional dialects.</p>
       </header>
 
       {/* Chat Transcript */}

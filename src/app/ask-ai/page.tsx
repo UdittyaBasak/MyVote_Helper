@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Mic, Square, Loader2 } from 'lucide-react';
 
 interface ChatMessage {
@@ -17,6 +17,7 @@ export default function AskAIPage() {
   ]);
 
   const [transcript, setTranscript] = useState('');
+  const transcriptRef = useRef('');
   const [recognition, setRecognition] = useState<any>(null);
 
   useEffect(() => {
@@ -39,6 +40,7 @@ export default function AskAIPage() {
             currentTranscript += event.results[i][0].transcript;
           }
           setTranscript(currentTranscript);
+          transcriptRef.current = currentTranscript;
         };
 
         rec.onerror = (event: any) => {
@@ -53,8 +55,9 @@ export default function AskAIPage() {
 
         rec.onend = () => {
           setIsRecording(false);
-          if (transcript) {
-            processFinalTranscript(transcript);
+          if (transcriptRef.current) {
+            processFinalTranscript(transcriptRef.current);
+            transcriptRef.current = '';
           }
         };
 

@@ -38,10 +38,10 @@ export default function Home() {
       </div>
 
       <header className="relative z-10 px-6 py-10 flex items-center justify-between max-w-7xl mx-auto">
-        <div className="flex flex-col group cursor-default">
+        <Link href="/" className="flex flex-col group cursor-pointer">
           <h1 className="text-3xl font-black text-primary tracking-tighter leading-none italic">MyVote Helper</h1>
           <p className="text-sm text-slate-400 mt-1 uppercase tracking-[0.3em] font-bold">Sovereign Edition</p>
-        </div>
+        </Link>
         <div className="flex items-center gap-6 text-sm font-medium">
           <Link href="/general-info" className="text-slate-400 hover:text-white transition-colors">Platform</Link>
           <Link href="/essentials" className="text-slate-400 hover:text-white transition-colors">Resources</Link>

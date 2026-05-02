@@ -27,19 +27,11 @@ export default function LoginPage() {
 
     if (isLogin) {
       // Login Logic
-      const result = await signIn('credentials', {
-        redirect: false,
+      await signIn('credentials', {
+        callbackUrl: '/general-info',
         email: formData.email,
         password: formData.password,
       });
-
-      if (result?.error) {
-        setError(result.error);
-        setIsLoading(false);
-      } else {
-        router.push('/general-info');
-        router.refresh();
-      }
     } else {
       // Registration Logic
       try {

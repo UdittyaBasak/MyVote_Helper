@@ -289,7 +289,7 @@ export default function ProfilePage() {
                 </div>
                 <div className="flex items-center justify-between p-3 bg-slate-950 rounded-xl border border-slate-800">
                   <span className="text-xs font-medium text-slate-400">Joined</span>
-                  <span className="text-xs font-bold text-white">{new Date(session?.user?.id ? parseInt(session.user.id.slice(0, 8), 36) : Date.now()).toLocaleDateString()}</span>
+                  <span className="text-xs font-bold text-white">{new Date((session?.user as any)?.id ? parseInt((session?.user as any).id.slice(0, 8), 36) : Date.now()).toLocaleDateString()}</span>
                 </div>
               </div>
             </div>

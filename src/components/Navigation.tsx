@@ -74,7 +74,7 @@ export default function Navigation() {
   return (
     <nav className="w-full h-16 bg-slate-900 border-b border-slate-800 px-6 flex items-center justify-between sticky top-0 z-50">
       <div className="flex items-center gap-10">
-          <Link href="/general-info" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center border border-primary/30 group-hover:bg-primary/30 transition-all">
               <div className="w-6 h-6 bg-primary rounded-md rotate-45 group-hover:rotate-90 transition-all flex items-center justify-center">
                 <div className="w-3 h-3 bg-slate-950 rounded-sm -rotate-45 group-hover:-rotate-90 transition-all" />

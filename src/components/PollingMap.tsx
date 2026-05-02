@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
-import { MapPin, Navigation as NavIcon, Search } from 'lucide-react';
+import { MapPin, Navigation as NavIcon, Search, AlertTriangle } from 'lucide-react';
 
 interface PollingStation {
   name: string;
@@ -24,12 +24,19 @@ export default function PollingMap() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+    
+    if (!apiKey) {
+      setLoading(false);
+      return;
+    }
+
     const loader = new Loader({
-      apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
+      apiKey: apiKey,
       version: "weekly",
     });
 
-    loader.load().then(() => {
+    (loader as any).load().then(() => {
       if (mapRef.current) {
         const initialMap = new google.maps.Map(mapRef.current, {
           center: { lat: 28.6139, lng: 77.2090 }, // New Delhi
@@ -43,7 +50,6 @@ export default function PollingMap() {
               elementType: "labels.text.fill",
               stylers: [{ color: "#d59563" }],
             },
-            // ... more premium dark mode styles
           ],
           disableDefaultUI: true,
           zoomControl: true,
@@ -56,20 +62,20 @@ export default function PollingMap() {
             map: initialMap,
             title: station.name,
             icon: {
-              path: google.maps.SymbolPath.CIRCLE,
+              path: 0, // SymbolPath.CIRCLE
               scale: 8,
               fillColor: "#FF9933",
               fillOpacity: 1,
               strokeWeight: 2,
               strokeColor: "#FFFFFF",
             },
-          });
+          } as any);
         });
 
         setMap(initialMap);
         setLoading(false);
       }
-    }).catch(e => {
+    }).catch((e: any) => {
         console.error("Maps failed to load", e);
         setLoading(false);
     });

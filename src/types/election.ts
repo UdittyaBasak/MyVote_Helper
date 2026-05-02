@@ -8,6 +8,7 @@ export interface PartyData {
 export interface CandidateData {
   id: string;
   name: string;
+  party: string;
   education: string;
   assets: string;
   criminalCases: number;

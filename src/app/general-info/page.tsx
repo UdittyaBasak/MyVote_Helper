@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Loader2, Landmark, User, FileText, Calendar, MapPin, Users, Clock, HelpCircle, CheckCircle2, AlertCircle, ExternalLink, Info } from 'lucide-react';
-import { electionService, ElectionInfo, PartyData, CandidateData } from '@/services/electionService';
+import { Search, Loader2, Landmark, User, FileText, Calendar, MapPin, Users, Clock, HelpCircle, CheckCircle2, AlertCircle, ExternalLink, Info, Globe } from 'lucide-react';
+import { electionService } from '@/services/electionService';
+import { ElectionInfo, PartyData, CandidateData } from '@/types/election';
 import PollingMap from '@/components/PollingMap';
 
 export default function GeneralInfoPage() {

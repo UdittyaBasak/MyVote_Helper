@@ -43,13 +43,11 @@ export default function Home() {
           <p className="text-sm text-slate-400 mt-1 uppercase tracking-[0.3em] font-bold">Sovereign Edition</p>
         </Link>
         <div className="flex items-center gap-6 text-sm font-medium">
-          <Link href="/general-info" className="text-slate-400 hover:text-white transition-colors">Platform</Link>
-          <Link href="/essentials" className="text-slate-400 hover:text-white transition-colors">Resources</Link>
           <Link
-            href="/general-info"
-            className="bg-primary hover:bg-primary/90 text-slate-950 px-5 py-2 rounded-full font-bold transition-all shadow-lg shadow-primary/20"
+            href="/login"
+            className="bg-primary hover:bg-primary/90 text-slate-950 px-6 py-2.5 rounded-full font-bold transition-all shadow-lg shadow-primary/20 active:scale-95"
           >
-            Launch App
+            Sign up / Log in
           </Link>
         </div>
       </header>

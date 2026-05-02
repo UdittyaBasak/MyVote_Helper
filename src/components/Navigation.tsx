@@ -118,8 +118,9 @@ export default function Navigation() {
         <button 
           onClick={toggleLanguage}
           className="flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-white transition-colors bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700 uppercase tracking-tighter"
+          aria-label={`Switch language to ${lang === 'EN' ? 'Hindi' : 'English'}`}
         >
-          <Globe className="w-3.5 h-3.5 text-primary" />
+          <Globe className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
           <span>{lang === 'EN' ? 'English' : 'हिंदी'}</span>
         </button>
         
@@ -134,8 +135,9 @@ export default function Navigation() {
                 }
               }}
               className={`relative p-2 text-slate-300 hover:text-white transition-colors rounded-full hover:bg-slate-800 ${showNotifications ? 'bg-slate-800 text-white' : ''}`}
+              aria-label="Toggle notifications"
             >
-              <Bell className="w-5 h-5" />
+              <Bell className="w-5 h-5" aria-hidden="true" />
               {unreadCount > 0 && (
                 <span className="absolute top-1 right-1 flex h-3 w-3 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-sm ring-2 ring-slate-900">
                   {unreadCount}

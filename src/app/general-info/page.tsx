@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Search, Loader2, Landmark, User, FileText, Calendar, MapPin, Users, Clock, HelpCircle, CheckCircle2, AlertCircle, ExternalLink, Info } from 'lucide-react';
 import { electionService, ElectionInfo, PartyData, CandidateData } from '@/services/electionService';
+import PollingMap from '@/components/PollingMap';
 
 export default function GeneralInfoPage() {
   const [constituency, setConstituency] = useState('');
@@ -37,8 +38,8 @@ export default function GeneralInfoPage() {
 
   const faqs = [
     { q: "How do I check if my name is on the voter list?", a: "You can visit the ECI Voter Portal or use the 'Voter Helpline' app. Search by EPIC number or personal details." },
-    { q: "What if I don't have a Voter ID card (EPIC)?", a: "You can still vote if your name is in the electoral roll. You'll need an alternative ID like Aadhaar, PAN card, or Driving License." },
     { q: "How can I find my polling station?", a: "Your polling station details are on your Voter Slip. You can also find it online via the ECI search portal using your EPIC number." },
+    { q: "What if I don't have a Voter ID card (EPIC)?", a: "You can still vote if your name is in the electoral roll. You'll need an alternative ID like Aadhaar, PAN card, or Driving License." },
     { q: "Can I vote online?", a: "No, currently Indian elections require physical presence at the polling station. Remote voting is only available for certain categories like service voters." }
   ];
 
@@ -51,6 +52,20 @@ export default function GeneralInfoPage() {
           <p className="text-slate-400 text-xl max-w-3xl leading-relaxed font-medium">A comprehensive guide to the democratic process, powered by GIGW 3.0 standards and real-time data insights.</p>
         </div>
       </header>
+
+      {/* Interactive Map Section */}
+      <section className="space-y-6">
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+            <Globe className="w-6 h-6 text-primary" />
+          </div>
+          <div>
+            <h2 className="text-3xl font-black text-white tracking-tight">Polling Station Tracker</h2>
+            <p className="text-slate-500 font-medium">Live wait times and station availability near you.</p>
+          </div>
+        </div>
+        <PollingMap />
+      </section>
 
       {/* Election Details Overview */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -1,25 +1,4 @@
-export interface CandidateData {
-  id: string;
-  name: string;
-  party: string;
-  education: string;
-  assets: string;
-  criminalCases: number;
-}
-
-export interface PartyData {
-  name: string;
-  logo: string;
-  ideology: string;
-  manifestoPoints: string[];
-}
-
-export interface ElectionInfo {
-  dates: string;
-  constituencyStats: string;
-  pollingStations: string | number;
-  historicalTurnout: string;
-}
+import { ElectionInfo, PartyData, CandidateData } from '@/types/election';
 
 export const electionService = {
   // Mock BigQuery Integration
